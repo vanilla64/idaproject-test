@@ -30,6 +30,12 @@ export const mutations = {
   deleteProductFromCart(state, card) {
     state.productsInCart = state.productsInCart.filter(c => c.id !== card.id)
   },
+  resetCart(state) {
+    state.productsInCart = []
+  },
+  isSuccessOrderToggle(state) {
+    state.isSuccessOrder = !state.isSuccessOrder
+  },
   isOrderedToggle(state, card) {
     state.cards.forEach(c => {
       if (c.id === card.id) return c.isOrdered = !c.isOrdered

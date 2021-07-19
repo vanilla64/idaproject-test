@@ -53,11 +53,20 @@ export default {
     setCartVisible() {
       this.$store.commit('setCartVisible')
     },
+    resetCart() {
+      this.$store.commit('resetCart')
+    },
+    isSuccessOrderToggle() {
+      this.$store.commit('isSuccessOrderToggle')
+    },
     onSubmit(evt) {
       evt.preventDefault()
-      this.setCartVisible()
+      // this.setCartVisible()
+
+      this.resetCart()
+      this.isSuccessOrderToggle()
       console.log('SUBMIT')
     }
-  }
+  },
 }
 </script>
